@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+   <!-- Optional theme --> 
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+   <!-- Latest compiled and minified JavaScript --> 
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <style>
+        .spec{
+            color: red;
+            font-weight: bold;
+        }
+        .center{
+    
+                margin: auto;
+                width: 50%;
+                border: 3px solid grey;
+                padding: 10px;
+        }
+   </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="center">
+        <h1>All My Friends!</h1>
+        <hr>
+        <br>
+        {%for friend in friends%}
+        <p> <span class="spec" > First Name:</span> {{friend.first_name}}</p>
+        <p><span class="spec" >Last Name:</span> {{friend.last_name}}</p>
+        <p><span class="spec" >Occupation:</span> {{friend.occupation}}</p>
+        <hr>
+        <br>
+        {%endfor%}
+   
+    <form action="/create_friend" method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">First Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="first_name">
+
+    <label for="exampleFormControlInput1">Last Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="last_name">
+
+    <label for="exampleFormControlInput1">Occupation</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="occupation">
+
+    <input type='submit' name="submit">
+  </div> 
+</div>
+</form>
+</body>
+</html>
+
+
+
+<!-- <p>{{friends[2].first_name}}</p> -->
